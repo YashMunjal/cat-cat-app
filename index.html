@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+  <h1 class="app-heading">Cat-Cat App</h1>
+  <p class="app-subtitle">A Vue.js powered app for data on {{breeds.length}} cat breeds and counting...</p>
+<hr>
+  <p class="inst">Select the cat breeds amongst the dropdown and wait for the data to load</p>
+    <select  @change="selectedValue($event)">
+        <option v-for="names in breed_loop" :value="names.id" :key="names.name" class="form-control">{{names.name}}</option>
+    </select><br><br>
+    <img :src="image.url" />
+    <p class="catDescription">{{breed_para.description}}</p>
+    <h1 class="wikiHeading">Wikipedia Excerpt</h1>
+    <iframe :src="breed_para.wikipedia_url" class="wikipedia_url"></iframe>
+  </div>
+</body>
+<script src="main.js"></script>
+</html>
