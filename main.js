@@ -21,7 +21,7 @@ var app=new Vue({
             {
                 try{
                     axios.defaults.headers.common['x-api-key'] = "f9953fed-2ecd-479b-bc01-eaa09768fc9e" 
-                    
+                    //api key to be in env soon
                     let response1 = await axios.get('https://api.thecatapi.com/v1/breeds/' ) 
                     this.breeds = response1.data;
                     for(var i=0;i<this.breeds.length;i++)
